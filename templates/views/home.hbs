@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood-Bud</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+     <div class="top_nav " >
+        <nav class="navbar" > 
+            <div class="menu_icon" onclick="menuVisible(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <ul class="ul_menu">
+                <li><a href="#" class="nav_elem">Home</a></li>
+                <li><a href="#" class="nav_elem">Donate</a></li>
+                <li><a href="#" class="nav_elem">Request</a></li>
+                <li><a href="#" class="nav_elem">FAQS</a></li>
+                <li><a href="#"class="nav_elem">History</a></li>
+            </ul>
+            <!-- <div class="logo_notification"> -->
+                <img src="/img/pngwing.com (2).png" id="bellIcon" alt="Bell icon" width="65px" height="55px">
+                <img src="/img/bloodbud.png" id="logo" alt="Logo" height="110px" width="130px">
+            <!-- </div> -->
+        </nav>
+
+    </div>
+    <div class="search_container">
+        <form>
+            <label for="searchBy">Search by</label>
+            <select name="searchBy" id="searchBy">
+                <option value="__state">State</option>
+                <option value="__district">District</option>
+                <option value="__city">City</option>
+                <option value="_pincode">Pincode</option>
+                <option value="_blood_bank_name">Blood Bank Name</option> 
+            </select>
+            <input type="text" name="searchKey" id="searchKey">
+            <button id="search-btn">Search</button>
+        </form>
+        <table id="blood_bank_table">
+            <thead id="table_head">
+                <td>Blood Bank Name</td>
+                <td>Pincode</td>
+                <td>Address</td>
+                <td>Contact no.</td>
+                <td>Email</td>
+            </thead>
+        </table>
+    </div>
+    <footer>
+        &copy;Blood Bud
+    </footer>
+    <script src="/js/home.js"></script>
+</body>
+</html>

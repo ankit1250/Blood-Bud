@@ -1,0 +1,24 @@
+{
+  "name": "blood_bank_management_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "home_js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit1250/Blood-Bud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit1250/Blood-Bud/issues"
+  },
+  "homepage": "https://github.com/ankit1250/Blood-Bud#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "mongoose": "^6.0.12"
+  }
+}

@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+    
     background-image: linear-gradient(to right,#EB4A70,#96277C);
 }
 
@@ -67,6 +68,15 @@ body{
 .navbar ul li a:hover{
     
     /* border-bottom:5px solid rgb(221, 210, 210); */
+}
+
+.search_container{
+    float:right;
+    margin-right: 90px;
+    padding: 6px;
+}
+#table_blood_bank #table_head{
+    padding: 5px;
 }
 #logo {
     
