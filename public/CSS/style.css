@@ -72,8 +72,17 @@ body{
 
 .search_container{
     float:right;
+    
     margin-right: 90px;
     padding: 6px;
+}
+.tableContent{
+    height: 30vh;
+    overflow: scroll;
+    width: 40vw;
+    margin-right: 90px;
+    
+    
 }
 #table_blood_bank #table_head{
     padding: 5px;

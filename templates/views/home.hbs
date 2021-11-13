@@ -30,7 +30,7 @@
 
     </div>
     <div class="search_container">
-        <form>
+        
             <label for="searchBy">Search by</label>
             <select name="searchBy" id="searchBy">
                 <option value="__state">State</option>
@@ -40,21 +40,26 @@
                 <option value="_blood_bank_name">Blood Bank Name</option> 
             </select>
             <input type="text" name="searchKey" id="searchKey">
-            <button id="search-btn">Search</button>
-        </form>
+            <button type="submit" id="search-btn" >Search</button>
+        
+        <div class="tableContent">
+
         <table id="blood_bank_table">
-            <thead id="table_head">
+            <thead>
                 <td>Blood Bank Name</td>
                 <td>Pincode</td>
                 <td>Address</td>
                 <td>Contact no.</td>
                 <td>Email</td>
             </thead>
+
         </table>
+        </div>
     </div>
     <footer>
         &copy;Blood Bud
     </footer>
     <script src="/js/home.js"></script>
+    <script src="/js/search.js"></script>
 </body>
 </html>
