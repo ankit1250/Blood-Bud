@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body{
-    
+    display: flex;
+    flex-direction: column;
     background-image: linear-gradient(to right,#EB4A70,#96277C);
 }
 
@@ -79,14 +80,15 @@ body{
 .tableContent{
     height: 30vh;
     overflow: scroll;
-    width: 40vw;
+    width: 45vw;
     margin-right: 90px;
     
     
 }
-#table_blood_bank #table_head{
-    padding: 5px;
+table,th,td{
+    border: 1px solid black;
 }
+
 #logo {
     
     position: fixed;
@@ -134,7 +136,9 @@ body{
     .ul_menu{
         display: none;
     }
-    
+    .top_nav,.search_container{
+        flex: 100%;
+    }
     .navbar,.navbar ul {
         flex-direction: column;
     }
