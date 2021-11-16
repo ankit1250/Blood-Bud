@@ -1,6 +1,6 @@
 const form = document.querySelector('#search-btn')
 const content = document.querySelector(".contentPage")
-const table = document.getElementById("blood_bank_table")
+const table = document.getElementById("table_body")
 form.addEventListener('click',(e)=>{
     const key = document.querySelector('#searchBy').value
     const value = document.querySelector('#searchKey').value
@@ -11,7 +11,8 @@ form.addEventListener('click',(e)=>{
             response.json().then((data)=>{
                 // content.textContent = JSON.stringify(data.records[0])
                 // console.log(data.records[0]["__state"])
-                console.log(data.records.length)
+                
+                table.innerHTML = ""
                 for(let i=0;i<data.records.length;i++){
                     var row = table.insertRow(-1)
                     var name = data.records[i]["_blood_bank_name"]

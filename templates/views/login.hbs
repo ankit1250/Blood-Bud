@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="/CSS/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+            <img src="/img/1.jpeg" alt="logo">
+    <div class="box">
+        <h1>
+            Login
+        </h1>
+        <div id="login_failed">{{msg}}</div>
+        <form action="/login" method="post">
+            <input type="text" name="userid" placeholder="User id" class="row">
+            <input type="password" name="password" placeholder="Password" class="row">
+            <input type="submit" value="Submit">
+            <h4>Don't have an account?<a href="\register">Register</a></h4>
+        </form>
+    </div>
+</body>
+</html>

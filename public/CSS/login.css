@@ -1,0 +1,62 @@
+body{
+    background-image: linear-gradient(to right,#EB4A70,#96277C);
+}
+.box{
+    width: 500px;
+    height: 350px;
+    border: 3px solid black;
+    position: absolute;
+    top: 200px;
+    left: 900px;
+    display: inline;
+    background-color: rgb(236, 222, 222);
+    text-align: center;
+    border-radius: 100px;
+}
+h1{
+    color: rgb(209, 19, 136);
+    top: 200px;
+}
+#login_failed{
+    background-color: rgb(18, 196, 77);
+    color: crimson;
+}
+.row{
+    width: 80%;
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 1.5em;
+    background-color: rgb(236, 222, 222);
+    border-bottom: 5px solid lightgrey;
+}
+img{
+    width: 400px;
+    position: absolute;
+    top: 180px;
+    left: 200px;
+    border-radius: 95% 95% ;
+}
+input[type=submit]{
+    width: 80%;
+    margin-top: 1.5em;
+    background-image:linear-gradient(to right,#EB4A70,#96277C);
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    letter-spacing: 2px;
+  
+  }
+  input[type=submit]:hover{
+    background-image: linear-gradient(to right,#ca2c51,#851069);
+  }
+
+
+
+
+

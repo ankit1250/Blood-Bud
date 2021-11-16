@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/ankit1250/Blood-Bud#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "hbs": "^4.1.2",
     "mongoose": "^6.0.12",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "validator": "^13.7.0"
   }
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="CSS/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="right_img">
+            <img id="register_logo" src="/img/bloodbud.png" alt="Logo" width="120%">
+        </div>
+        <div class="form_section">
+            <h1>Register</h1>
+            <form action="/register" method="post">
+              <input type="text" placeholder="Name" class="row" name="name">
+              <input type="email" placeholder="Email" class="row" name="email">
+              <input type="text" placeholder="Phone" class="row" name="phone">
+              <input type="text" placeholder="Age" class="row" name="age">
+              <input type="number" placeholder="Aadhar Number" class="row" name="aadhar">
+              <input type="text" placeholder="Blood Group" class="row" name="blood_group">
+              <input type="text" placeholder="State" class="row" name="state">
+              <input type="text" placeholder="City" class="row" name="city">
+              <input type="number" placeholder="Pincode" class="row" name="pincode">
+              <input type="text" placeholder="User id" class="row" name="userid">
+              <input type="password" placeholder="Password" class="row" name="password">
+
+              <input type="submit" value="Register">
+
+              <h4>Have an account?<a href="/login">Login</a></h4>
+
+            </form>
+        </div>
+        <div class="left_img">
+            <img src="/img/register.png" alt="" id="left_image" width="80%">
+        </div>
+    </div>
+</body>
+</html>
