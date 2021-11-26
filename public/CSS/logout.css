@@ -1,0 +1,33 @@
+body{
+    background-color: grey;
+}
+.logout_container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:20vh;
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(160, 88, 142);
+}
+.logout_container h3{
+   
+   color: rgb(24, 226, 159);
+}
+
+#btn_login{
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 30px;
+    margin-left: 30px;
+    width: 90px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+  background-color: rgb(70, 169, 226);
+  color: rgb(49, 39, 28);
+}
+#btn_login:hover{
+    background-color: rgb(27, 84, 119);
+}

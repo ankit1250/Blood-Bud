@@ -2,6 +2,9 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const User = require('./models/user')
+const Request= require('./models/request')
+const cookieParser = require('cookie-parser')
+const auth = require('./middleware/auth')
 require('./db/mongoose')
 
 const app = express()
@@ -16,11 +19,12 @@ app.set('view engine','hbs')
 app.set('views',viewsPath)
 hbs.registerPartials(partialsPath)
 
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(publicPath))
 
-app.get('/Blood-Bud',(req,res)=>{
+app.get('/Blood-Bud',auth,(req,res)=>{
     res.render('home')
 })
 
@@ -50,10 +54,39 @@ app.post('/register',async (req,res)=>{
         }
         // console.log(user)
         await user.save();
+        const token = await user.generateAuthToken()
+        res.cookie('access_token',token,{
+            httpOnly:true,
+            secure:process.env.NODE_ENV === "production",
+        })
+        res.redirect(201,'/Blood-Bud')
        
         
     }catch(e){
         res.status(500).send(e)
+    }
+})
+
+app.get('/Blood-Bud/request',auth,async (req,res)=>{
+    res.render('request')
+})
+
+app.post('/Blood-Bud/request',auth,async(req,res)=>{
+    const requestInfo = {
+        userId: req.user._id.toString(),
+        userName: req.user.name,
+        blood_type: req.body.BG,
+        blood_bank: req.body.blood_bank
+    }
+    try{
+        const request = new Request(requestInfo)
+        if(!request){
+            return res.status(403).send("Invalid request")
+        }
+        await request.save()
+        res.redirect(201,'/Blood-Bud/request')
+    }catch(e){
+        res.status(500).send()
     }
 })
 
@@ -74,12 +107,37 @@ app.post('/login',async (req,res)=>{
         if(!user){
             return res.redirect('/login?msg=Invalid userid or password')
         }
-        
+        const token = await user.generateAuthToken()
+        res.cookie('access_token',token,{
+            httpOnly:true,
+            secure:process.env.NODE_ENV=== "production",
+        })
         res.redirect(302,'/Blood-Bud')
     }
     catch(e){
         res.status(500).send(e)
     }
+})
+
+
+
+app.get('/logout',auth,async (req,res)=>{
+    try{
+ 
+        req.user.tokens = req.user.tokens.filter((token)=>{
+            return token.token !== req.token
+        })
+        await req.user.save()
+        res.clearCookie('access_token')
+        res.render('logout')
+    }catch(e){
+        console.log(e)
+        res.status(500).send(e)
+    }
+ })
+
+app.get('/Blood-Bud/FAQs',auth,(req,res)=>{
+    res.render('FAQ')
 })
 
 app.listen(port,()=>{

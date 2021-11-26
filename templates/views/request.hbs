@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood-Bud</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/side_nav.css">
+</head>
+<body>
+     {{>header}}
+    <div class="request_div">
+        <form action="/Blood-Bud/request" method="post">
+        
+        
+<table style="width : 60%">
+<tr>
+ <td style="width:45%"><h2 style="color: white;">Please select the Blood Group :</h2></td>
+ <td><select name="BG" size="1" a>  
+ <option value="A+"> A+ </option>  
+ <option value="A-"> A- </option>  
+ <option value="B+"> B+ </option>  
+ <option value="B-"> B- </option>  
+ <option value="O+"> O+ </option>  
+ <option value="O-"> O- </option>
+ <option value="AB+"> AB+ </option>  
+ <option value="AB-"> AB- </option>  
+ </select> 
+ </td> 
+</tr>
+<tr>
+    <td style="width:45%"> <h2 style="color: white;">Please provide your Location:</h2> </td>
+    <td >
+        <select name="searchBy" id="searchBy">
+                <option value="__state">State</option>
+                <option value="__district">District</option>
+                <option value="__city">City</option>
+                <option value="_pincode">Pincode</option> 
+        </select>
+    <input type="text" id="location" name="Name" size="20" onblur="myFunc()">
+    </td>
+</tr>
+<tr>
+    <td style="width: 45%"><h2 style="color:white">Choose Blood Bank: </h2></td>
+    <td><select name="blood_bank" style="width: 100%;" id="blood_banks">
+       <option value="" disabled selected>Choose Blood Bank</option>
+    </select></td>
+</tr>
+</table>
+</div>
+ <button type="submit" style="width:100px;height:30px;margin-left: 450px;">REQUEST</button>
+        </form>
+   
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/request.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#blood_bank_table').hide();
+        })
+    </script>
+</body>
+</html>
+

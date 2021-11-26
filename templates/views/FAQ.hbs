@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ PAGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/FAQ.css">
+     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/side_nav.css">
+
+</head>
+
+<body>
+    {{>header}}
+    <main>
+
+        <h1 class="faq-heading">FAQ'S</h1>
+        <section class="faq-container">
+            <div class="faq-one">
+
+                <!-- faq question -->
+                <h1 class="faq-page">Whom should I contact in case of any problem ?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Kindly email your queries on jpomkar1@gmail.com</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-two">
+
+                <!-- faq question -->
+                <h1 class="faq-page">What is Blood Bud?</h1>
+
+                <!-- faq answer -->
+
+                <div class="faq-body">
+                    <p>Details about Blood Bud are available at </p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+
+            <div class="faq-three">
+
+                <!-- faq question -->
+<h1 class="faq-page">How can i check the nearest blood bank from my current location?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Use Blood Bud search nearest blood bank, then you can see distance wise list of blood banks.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-one">
+
+                <!-- faq question -->
+                <h1 class="faq-page">How does age affects my ability to donate blood?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>Minimum age for whole blood donation is 18 years in India. The maximum age for blood donation depends on the kind of donation.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-one">
+
+                <!-- faq question -->
+                <h1 class="faq-page">How often can I donate Blood ?</h1>
+
+                <!-- faq answer -->
+                <div class="faq-body">
+                    <p>After every three –four months you can donate blood.</p>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+        </section>
+    </main>
+    <script src="/js/FAQ.js"></script>
+<footer>
+        &copy;Blood Bud
+    </footer>
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/search.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#blood_bank_table').hide();
+        })
+    </script>
+</body>
+
+
+</html>

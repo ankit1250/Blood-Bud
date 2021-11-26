@@ -6,32 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood-Bud</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/side_nav.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-     <div class="top_nav " >
-        <nav class="navbar" > 
-            <div class="menu_icon" onclick="menuVisible(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <ul class="ul_menu">
-                <li><a href="#" class="nav_elem">Home</a></li>
-                <li><a href="#" class="nav_elem">Donate</a></li>
-                <li><a href="#" class="nav_elem">Request</a></li>
-                <li><a href="#" class="nav_elem">FAQS</a></li>
-                <li><a href="#"class="nav_elem">History</a></li>
-            </ul>
-            <!-- <div class="logo_notification"> -->
-                <img src="/img/pngwing.com (2).png" id="bellIcon" alt="Bell icon" width="65px" height="55px">
-                <img src="/img/bloodbud.png" id="logo" alt="Logo" height="110px" width="130px">
-            <!-- </div> -->
-        </nav>
+     {{>header}}
+    <div class="clearfix">
 
-    </div>
-    <div class="search_container">
+    <div class="search_container box">
         
-            <label for="searchBy">Search by</label>
+            <label for="searchBy" id="search_label">Search by</label>
             <select name="searchBy" id="searchBy">
                 <option value="__state">State</option>
                 <option value="__district">District</option>
@@ -43,8 +27,8 @@
             <button type="submit" id="search-btn" >Search</button>
         
         <div class="tableContent">
-
-        <table id="blood_bank_table">
+        <img src="/img/" alt="">
+        <table id="blood_bank_table" width="100%">
             <thead>
                 <td>Blood Bank Name</td>
                 <td>Pincode</td>
@@ -58,10 +42,90 @@
         </table>
         </div>
     </div>
+    <div class="slideshow box" id="img_slider">
+        <div class="slide-wrapper">
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+            <div class="image-container"></div>
+        </div>
+    </div>
+    </div>
+    <br><br><br>
+    <div class="donate_info clearfix">
+        <h1 style="text-align: center;">THINGS TO KNOW BEFORE  DONATION</h1>
+        <div class="quotes_img box"><img src="/img/donate_blood.jpg" width="100%" alt="Donate Blood"></div>
+        <div class="donation_table box">
+            <table id="donor_table" width="100%">
+                <th colspan="3">Who can donate whom?</th>
+                <tr>
+                    <td>Blood Type</td>
+                    <td>Donate Blood To</td>
+                    <td>Receive Blood From</td>
+                </tr>
+                <tr>
+                    <td>A+</td>
+                    <td>A+ AB+</td>
+                    <td>A+ A- O+ O-</td>
+                </tr>
+                <tr>
+                    <td>O+</td>
+                    <td>O+ A+ B+ AB+</td>
+                    <td>O+ O-</td>
+                </tr>
+                <tr>
+                    <td>B+</td>
+                    <td>B+ AB+</td>
+                    <td>B+ B- O+ O-</td>
+                </tr>
+                <tr>
+                    <td>AB+</td>
+                    <td>AB+</td>
+                    <td>Everyone</td>
+                </tr>
+                <tr>
+                    <td>A-</td>
+                    <td>A+ A- AB+ AB-</td>
+                    <td>A- O-</td>
+                </tr>
+                <tr>
+                    <td>O-</td>
+                    <td>Everyone</td>
+                    <td>O-</td>
+                </tr>
+                <tr>
+                    <td>B-</td>
+                    <td>B+ B- AB+ AB-</td>
+                    <td>B- O-</td>
+                </tr>
+                <tr>
+                    <td>AB-</td>
+                    <td>AB+ AB-</td>
+                    <td>AB+ A- B- O-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
     <footer>
         &copy;Blood Bud
     </footer>
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="/js/home.js"></script>
     <script src="/js/search.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#blood_bank_table').hide();
+        })
+    </script>
 </body>
 </html>

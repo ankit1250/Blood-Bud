@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const validator = require('validator')
+const jwt = require('jsonwebtoken')
 
 mongoose.connect('mongodb://127.0.0.1:27017/Blood_Bank',{
     useNewUrlParser:true,
@@ -67,8 +68,22 @@ const userSchema = new mongoose.Schema({
     },
     history:{
         type:String
-    }
+    },
+    tokens:[{
+        token:{
+            type:String,
+            required:true
+        }
+    }]
 })
+
+userSchema.methods.generateAuthToken = async function(){
+    const user = this
+    const token = jwt.sign({_id:user._id.toString()},'myhppavilion')
+    user.tokens = user.tokens.concat({token})
+    await user.save()
+    return token
+}
 
 userSchema.statics.findByCredentials = async (userid,password)=>{
     try{
@@ -82,11 +97,12 @@ userSchema.statics.findByCredentials = async (userid,password)=>{
         if(!isMatch){
             throw new Error("Unable to login")
         }
+        return user
     }catch(e){
         return null
     }
 
-    return user
+   
 }
 
 userSchema.pre('save',async function(next){

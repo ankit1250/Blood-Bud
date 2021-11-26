@@ -1,7 +1,9 @@
 const form = document.querySelector('#search-btn')
 const content = document.querySelector(".contentPage")
 const table = document.getElementById("table_body")
+
 form.addEventListener('click',(e)=>{
+    
     const key = document.querySelector('#searchBy').value
     const value = document.querySelector('#searchKey').value
         const url = "https://api.data.gov.in/resource/fced6df9-a360-4e08-8ca0-f283fc74ce15?api-key=579b464db66ec23bdd00000129d0b4eb7b284a5e69258ef4eb5b37a5&format=json&offset=0&limit=100&filters["+key+"]="+value
@@ -34,5 +36,6 @@ form.addEventListener('click',(e)=>{
                 }
             })
         })
+        $("#blood_bank_table").show()
     })
     

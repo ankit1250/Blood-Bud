@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  .nav-open .nav {
+    transform: translateX(380px);
+  }
+  
+  .nav-open .main {
+    transform: translateX(380px);
+  }
+  ion-icon{
+    font-size: 60px;
+  }
+  .nav {
+    z-index: 10;
+    position: fixed;
+      right: 380px;
+      top: 38px;
+    width: 350px;
+    height: 100vh;
+    position: fixed;
+   
+    background-image: linear-gradient(to right,#EB4A70,#96277C);
+    transform: translateX(760px);
+    transition: transform 0.2s;
+    overflow: hidden;
+  }
+  
+  .nav-close {
+    background: none;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 15px 25px;
+    color: #dddddd;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  
+  .nav-close:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-links-container {
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #dddddd;
+  }
+  
+  .nav__text {
+    font-size: 22px;
+    font-family: "Assistant", sans-serif;
+    font-weight: 500;
+  }
+  
+  .nav__link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .main {
+    transition: transform 0.2s;
+    z-index: 10;
+  }
+  
