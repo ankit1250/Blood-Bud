@@ -84,6 +84,7 @@ body{
     width: 10vw;
 }
 #search-btn{
+    text-align: center;
     width: 8vw;
     height: 25px;
     background-color: rgba(146, 20, 185, 0.479);
@@ -260,7 +261,7 @@ box-shadow: inset 0 0 10px 10px #888;
     margin: 10%;
 }
 
-footer{
+/* footer{
     width: 100%;
     display: block;
     background-color: #5a234d;
@@ -268,4 +269,9 @@ footer{
     text-align: center;
     position: fixed;
     bottom: 0;
+} */
+
+#donate_quote{
+    text-align: center;
+    color: rgb(187, 255, 0);
 }

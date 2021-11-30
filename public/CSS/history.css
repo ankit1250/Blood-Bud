@@ -1,0 +1,124 @@
+/* Split the screen in half */
+body {
+    background-image: linear-gradient(to right,#EB4A70,#96277C);
+    counter-reset: Serial; 
+  }
+  @import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+
+  * { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+  }
+  
+  
+  
+  table {
+    border-collapse: separate;
+    background:rgb(179, 9, 108);
+    @include border-radius(5px);
+    margin:50px auto;
+    @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+  }
+  
+  thead {
+    @include border-radius(5px);
+    background:whitesmoke;
+  }
+  
+  thead th {
+    font-family: 'Patua One', cursive;
+    font-size:16px;
+    font-weight:bolder;
+    color:black;
+    @include text-shadow(1px 1px 0px rgba(0,0,0,0.5));
+    text-align:left;
+    padding:20px;
+    
+    border-top:1px solid #858d99;
+    
+    &:first-child {
+     @include border-top-left-radius(5px); 
+    }
+  
+    &:last-child {
+      @include border-top-right-radius(5px); 
+    }
+  }
+  
+  tbody tr td {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    color:#6c9c1d;
+    font-weight: bolder;
+    font-size:13px;
+    padding:20px 20px 20px 20px;
+    border-bottom:1px solid #e0e0e0;
+    
+  }
+  
+  tbody tr:nth-child(2n) {
+    background:#b7b9bb;
+  }
+  
+  tbody tr:last-child td {
+    border-bottom:none;
+    &:first-child {
+      @include border-bottom-left-radius(5px);
+    }
+    &:last-child {
+      @include border-bottom-right-radius(5px);
+    }
+  }
+  
+  tbody:hover > tr td {
+    @include opacity(0.5);
+    
+    /* uncomment for blur effect */
+    /* color:transparent;
+    @include text-shadow(0px 0px 2px rgba(0,0,0,0.8));*/
+  }
+  
+  tbody:hover > tr:hover td {
+    @include text-shadow(none);
+    color:#0c0b0b;
+    
+    @include opacity(1.0);
+  }
+
+  tbody tr td:first-child:before
+{
+  counter-increment: Serial;      /* Increment the Serial counter */
+  content: counter(Serial); /* Display the counter */
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  

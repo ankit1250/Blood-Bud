@@ -26,7 +26,8 @@ const requestSchema = new mongoose.Schema({
         type:String,
         default:"Not Approved",
         required:true
-    }
-})
+    },
+    
+},{timestamps:true})
 const Request = new mongoose.model('Request',requestSchema)
 module.exports = Request

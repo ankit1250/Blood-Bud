@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>History</title>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/CSS/history.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/side_nav.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        {{>header}}
+        <div class="clearfix">
+
+        <h1 style="text-align: center;">
+            History
+        </h1>
+        <div class="box">
+            
+                
+                <table>
+                    <thead>
+                        <tr><td colspan="5" style="color: black; text-align:center"><h2>Request</h2></td></tr>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Date</th>
+                            <th>Blood bank</th>
+                            <th>status</th>
+                            <th>Blood group</th>
+                        </tr>
+                    </thead>
+                    <tbody id="request_body">
+                        {{#each requests}}
+                        <tr>
+                            <td></td>
+                            <td>{{createdAt}}</td>
+                            <td>{{blood_bank}}</td>
+                            <td>{{requestStatus}}</td>
+                            <td>{{blood_type}}</td>
+                        </tr>
+                        {{/each}}
+                       
+                    </tbody>
+                </table>
+            
+          </div>
+          
+          <div class="box">
+            
+                
+                <table>
+                    <thead>
+                        <tr><td colspan="5" style="color: black; text-align:center"><h2>Donate</h2></td></tr>
+                        <tr>
+                            <th>S.no</th>
+                            <th>Date</th>
+                            <th>Blood bank</th>
+                            <th>Status</th>
+                            <th>Blood group</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Carolina Biggleswade</td>
+                            <td>23</td>
+                            <td>65</td>
+                            <td>Jockey</td>
+                            <td>Jockey</td>
+                        </tr>
+                        <tr>
+                            <td>Harry Sparrowhead</td>
+                            <td>34</td>
+                            <td>89</td>
+                            <td>Trainer</td>
+                            <td>Trainer</td>
+                        </tr>
+                        <tr>
+                            <td>Marjorie Doors</td>
+                            <td>32</td>
+                            <td>76</td>
+                            <td>Yard Manager</td>
+                            <td>Trainer</td>
+                        </tr>
+                        <tr>
+                            <td>Earnest Piggington-Smithe</td>
+                            <td>18</td>
+                            <td>98</td>
+                            <td>Groom</td>
+                            <td>Trainer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+          </div>
+        </div>
+    <footer>
+        &copy;Blood Bud
+    </footer>
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/history.js"></script>
+    </body>
+
+</html>

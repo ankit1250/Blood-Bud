@@ -140,6 +140,15 @@ app.get('/Blood-Bud/FAQs',auth,(req,res)=>{
     res.render('FAQ')
 })
 
+app.get('/Blood-Bud/user/history',auth,async (req,res)=>{
+    const userid = req.user._id.toString()
+    const requests =await Request.find({userId:userid})
+    console.log(requests.length)
+    res.render('history',{
+        requests: requests
+    })
+})
+
 app.listen(port,()=>{
     console.log("server is running!")
 })
