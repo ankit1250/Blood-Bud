@@ -49,7 +49,7 @@ body {
   tbody tr td {
     font-family: 'Open Sans', sans-serif;
     font-weight:400;
-    color:#6c9c1d;
+    color:#67b825;
     font-weight: bolder;
     font-size:13px;
     padding:20px 20px 20px 20px;
@@ -58,7 +58,8 @@ body {
   }
   
   tbody tr:nth-child(2n) {
-    background:#b7b9bb;
+    background:#5e5f61;
+    color:black;
   }
   
   tbody tr:last-child td {
@@ -86,11 +87,12 @@ body {
     @include opacity(1.0);
   }
 
-  tbody tr td:first-child:before
+  .request_body tr td:first-child:before
 {
   counter-increment: Serial;      /* Increment the Serial counter */
   content: counter(Serial); /* Display the counter */
 }
+
 .split {
     height: 100%;
     width: 50%;

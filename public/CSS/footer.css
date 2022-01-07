@@ -1,0 +1,42 @@
+
+.footer{
+    
+    background-color: black;
+    color: #fff;
+  
+    font-weight: 400;    
+    margin-bottom: 0;  
+    
+  }
+
+  .footer__title{
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+  .footer__social{
+    margin-bottom: 4px;
+  }
+  .footer__icon{
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 2px;
+  }
+  .contact{
+    text-align: center;
+  }
+  .logos{
+    min-width: 600px;
+    margin: 0 44%;
+  }
+  .logos img{
+    filter: grayscale(100%); 
+    display: inline; transform: translateY(25%) ;
+  }
+  .logos p
+  {
+    display: inline;
+  }
+  .logos a{
+    text-decoration: none;
+    color: #ddd;
+  }

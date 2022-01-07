@@ -1,20 +1,30 @@
 const mongoose = require('mongoose')
 
 
+
 mongoose.connect('mongodb+srv://ankit123:898686@cluster0.y60mi.mongodb.net/Blood_Bank?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 })
-
-const requestSchema = new mongoose.Schema({
-   
-    userId:{
+const donateSchema = mongoose.Schema({
+    userid:{
         type:String,
         required:true
     },
-    userName:{
+    name:{
        type:String,
        required:true
+    },
+    age:{
+        type:Number,
+        required:true
+    },
+    mobile_no:{
+        type:Number,
+        required:true
+    },
+    alt_mobile:{
+        type:Number
     },
     blood_bank:{
         type:String,
@@ -24,12 +34,13 @@ const requestSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    requestStatus:{
+    donateStatus:{
         type:String,
         default:"Not Approved",
         required:true
     },
     
 },{timestamps:true})
-const Request = new mongoose.model('Request',requestSchema)
-module.exports = Request
+
+const Donate  = new mongoose.model('Donate',donateSchema)
+module.exports = Donate

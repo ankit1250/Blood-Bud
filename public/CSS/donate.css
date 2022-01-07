@@ -1,0 +1,72 @@
+*{
+    font-family: 'Be Vietnam Pro', sans-serif;
+  }
+  body{
+    background-image: linear-gradient(to right,#EB4A70,#96277C);
+    
+  }
+  h1{
+    color: rgb(209, 19, 136);
+  } 
+  .box{
+    border: solid 3px black;
+    width: 500px;
+    height: 600px;
+    background-color: #f59de0;
+    align-items: center;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+  }
+  .box input[type=reset]{
+    width: 80%;
+    margin-top: 1.5em;
+    background-image:linear-gradient(to right,#EB4A70,#96277C);
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    letter-spacing: 2px;
+  }
+  .box input[type=submit]{
+    width: 80%;
+    margin-top: 1.5em;
+    background-image:linear-gradient(to right,#EB4A70,#96277C);
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    letter-spacing: 2px;
+    align-items: center;
+  }
+  .reset{
+    position: absolute;
+    left: 50px;
+    top: 80%;
+  }
+  .donate{
+    position: absolute;
+    left: 50px;
+    top: 90%;
+  }
+  .f1{
+    width: 30%;
+    margin-top: 5px;
+    background-color: #f59de0;
+  }
+  p{
+    font-size: 50px;
+    position: absolute;
+    top: 180px;
+    left: 980px;
+    color: whitesmoke;
+  }
+  
+  
+  

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>History</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/side_nav.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        {{>header}}
+        <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                </div>
+            <div class=" col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Your Profile</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control"  value="{{name}}"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Age</label><input type="text" class="form-control"  value="{{age}}"></div>
+                        <div class="col-md-12"><label class="labels">Blood Group</label><input type="text" class="form-control"  value="{{blood_group}}"></div>
+                        <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control"  value="{{email}}"></div>
+                        <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control" value="{{phone}}"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Pincode </label><input type="text" class="form-control" value="{{pincode}}"> </div>
+                        <div class="col-md-6"><label class="labels">City</label><input type="text" class="form-control" value="{{city}}"> </div>
+                        <div class="col-md-6"><label class="labels">State</label><input type="text" class="form-control"  value="{{state}}"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                   </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    {{>footer}}
+    <script>
+        function toggleNav() {
+          
+          document.body.classList.toggle("nav-open");
+         
+
+        }
+
+        var addSerialNumber = function () {
+  $('#donate_body tr').each(function(index) {
+      $(this).find('td:nth-child(1)').html(index+1);
+  });
+};
+
+addSerialNumber();
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/history.js"></script>
+    </body>
+
+</html>

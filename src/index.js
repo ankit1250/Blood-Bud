@@ -3,12 +3,13 @@ const express = require('express')
 const hbs = require('hbs')
 const User = require('./models/user')
 const Request= require('./models/request')
+const Donate = require('./models/donate')
 const cookieParser = require('cookie-parser')
 const auth = require('./middleware/auth')
 require('./db/mongoose')
 
 const app = express()
-const port  = process.env.port || 3000
+const port  = process.env.PORT
 
 
 const publicPath = path.join(__dirname,'../public')
@@ -67,6 +68,35 @@ app.post('/register',async (req,res)=>{
     }
 })
 
+app.get('/Blood-Bud/donate',auth,async(req,res)=>{
+    res.render('donate');
+})
+
+app.post('/Blood-Bud/donate',auth,async (req,res)=>{
+    
+    const donateInfo = {
+        userid: req.user._id.toString(),
+        name: req.body.name,
+        gender: req.body.gender,
+        age: req.body.age,
+        email: req.body.email,
+        mobile_no: req.body.mobile_no,
+        alt_mobile: req.body.alt_mobile,
+        blood_bank:req.body.blood_bank,
+        blood_type: req.body.bg
+    }
+    try{
+       const donate = new Donate(donateInfo)
+       if(!donate){
+           return res.status(400).send("Invalid donate request");
+       }
+       await donate.save()
+       res.redirect("/Blood-Bud/donate")
+    }catch(e){
+       res.status(500).send(e);
+    }
+})
+
 app.get('/Blood-Bud/request',auth,async (req,res)=>{
     res.render('request')
 })
@@ -84,7 +114,7 @@ app.post('/Blood-Bud/request',auth,async(req,res)=>{
             return res.status(403).send("Invalid request")
         }
         await request.save()
-        res.redirect(201,'/Blood-Bud/request')
+        res.redirect('/Blood-Bud/request')
     }catch(e){
         res.status(500).send()
     }
@@ -143,12 +173,25 @@ app.get('/Blood-Bud/FAQs',auth,(req,res)=>{
 app.get('/Blood-Bud/user/history',auth,async (req,res)=>{
     const userid = req.user._id.toString()
     const requests =await Request.find({userId:userid})
-    console.log(requests.length)
+    const donate_requests = await Donate.find({userid:userid})
+    
     res.render('history',{
-        requests: requests
+        requests: requests,
+        donate_requests: donate_requests
     })
 })
-
+app.get('/Blood-Bud/profile',auth,async (req,res)=>{
+    res.render('profile',{
+        name: req.user.name,
+        email: req.user.email,
+        age: req.user.age,
+        blood_group: req.user.blood_group,
+        phone: req.user.phone,
+        state: req.user.state,
+        city: req.user.city,
+        pincode: req.user.pincode
+    })
+})
 app.listen(port,()=>{
-    console.log("server is running!")
+    console.log("server is running on ",port)
 })
